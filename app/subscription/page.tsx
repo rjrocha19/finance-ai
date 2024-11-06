@@ -1,3 +1,3 @@
 export default function Subscription() {
-  return <h1>Subscription</h1>;
+  return <h1>Subscription</h1>
 }
