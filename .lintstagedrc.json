@@ -1,5 +1,6 @@
 {
   "*.ts?(x)": [
+    "npx @biomejs/biome format",
     "eslint --fix",
     "prettier --write"
   ]
