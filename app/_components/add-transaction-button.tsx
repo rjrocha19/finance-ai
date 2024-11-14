@@ -43,6 +43,7 @@ import {
   TRANSACTION_TYPE_OPTIONS,
 } from '../_constsnts/transactions';
 import { DatePicker } from './ui/date-picker';
+import { addTransaction } from '../_actions/add-transaction';
 
 const formSchema = z.object({
   name: z.string().trim().min(1, {
@@ -84,8 +85,12 @@ export default function AddTransactionButton() {
     },
   });
 
-  const onSubmit = (data: formSchema) => {
-    console.log({ data });
+  const onSubmit = async (data: formSchema) => {
+    try {
+      await addTransaction(data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
